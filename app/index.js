@@ -61,7 +61,7 @@ const HomeScreen = () => {
 
     return (
         <LinearGradient 
-            colors={['#4c669f', '#3b5998', '#192f6a']}
+            colors={['#add8e6', '#87cefa', '#4682b4', '#1e90ff', '#00008b']}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 1 }}
             style={styles.container}
