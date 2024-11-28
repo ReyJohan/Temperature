@@ -3,7 +3,11 @@ import { View, Text, StyleSheet, Button, Platform, ActivityIndicator, Alert } fr
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 const HomeScreen = () => {
-    const [date, setDate] = useState(new Date());
+    const today = new Date();
+    const tomorrow = new Date();
+    tomorrow.setDate(today.getDate() + 1);
+
+    const [date, setDate] = useState(tomorrow);
     const [show, setShow] = useState(false);
     const [predictedTemperature, setPredictedTemperature] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -65,8 +69,7 @@ const HomeScreen = () => {
                 value={date}
                 mode="date"
                 display='spinner'
-                minimumDate={new Date()}
-                maximumDate={new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)} // 7 días en el futuro
+                minimumDate={tomorrow}
                 onChange={onChange}
             />
             )}
