@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Button, Platform, ActivityIndicator, Alert } from 'react-native';
+import { View, Text, StyleSheet, Button, Platform, ActivityIndicator, Alert, TouchableOpacity } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import { LinearGradient } from 'expo-linear-gradient';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const HomeScreen = () => {
     const today = new Date();
@@ -58,11 +60,17 @@ const HomeScreen = () => {
     };
 
     return (
-        <View style={styles.container}>
+        <LinearGradient 
+            colors={['#4c669f', '#3b5998', '#192f6a']}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={styles.container}
+        >
+            <Icon name="weather-partly-cloudy" size={80} color="#FFFFFF" />
             <Text style={styles.title}>Predicción de Temperatura</Text>
-            <View style={styles.buttonContainer}>
-                <Button onPress={showDatePicker} title="Seleccionar Fecha" color="#1E90FF" />
-            </View>
+            <TouchableOpacity style={styles.buttonContainer} onPress={showDatePicker}>
+                <Text style={styles.buttonText}>Seleccionar Fecha</Text>
+            </TouchableOpacity>
 
             {show && (
             <DateTimePicker
@@ -84,14 +92,13 @@ const HomeScreen = () => {
                 </Text>
             </View>
             )}
-        </View>
+        </LinearGradient>
     );
 };
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#87CEEB',
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,

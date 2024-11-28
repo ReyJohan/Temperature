@@ -9,7 +9,7 @@ export default function Layout() {
                 headerTitleStyle: { fontWeight: 'bold' },
             }}
         >
-            <Stack.Screen name="index" options={{ title: 'Predicción de Temperatura' }} />
+            <Stack.Screen name="index" options={{ title: 'Ciudad de Bucaramanga' }} />
         </Stack>
     );
 }
