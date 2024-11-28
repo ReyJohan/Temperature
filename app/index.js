@@ -68,7 +68,7 @@ const HomeScreen = () => {
         >
             <Icon name="weather-partly-cloudy" size={80} color="#FFFFFF" />
             <Text style={styles.title}>Predicción de Temperatura</Text>
-            <TouchableOpacity style={styles.buttonContainer} onPress={showDatePicker}>
+            <TouchableOpacity style={styles.buttonContainer} onPress={showDatePicker} activeOpacity={0.8}>
                 <Text style={styles.buttonText}>Seleccionar Fecha</Text>
             </TouchableOpacity>
 
@@ -111,8 +111,24 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     buttonContainer: {
-        width: '80%',
+        backgroundColor: '#1E90FF', 
+        borderRadius: 10,           
+        paddingVertical: 12,        
+        paddingHorizontal: 25,      
         marginTop: 20,
+        alignItems: 'center',     
+        alignSelf: 'center',    
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+    },
+    buttonText: {
+        color: '#FFFFFF',           // Color blanco para el texto
+        fontSize: 18,
+        fontWeight: 'bold',
+        textAlign: 'center',
     },
     result: {
         marginTop: 30,
